@@ -1,7 +1,8 @@
 # Key Commands
 
 # Install Helmfile:
-```bashbrew install helmfile     # macOS
+```
+bashbrew install helmfile     # macOS
 ```
 # or download binary from GitHub releases
 Add Helm repos and sync dependencies:

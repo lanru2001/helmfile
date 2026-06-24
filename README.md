@@ -2,12 +2,8 @@
 
 # Install Helmfile:
 ```
-bashbrew install helmfile     # macOS
-```
-# or download binary from GitHub releases
-Add Helm repos and sync dependencies:
-```
-bashhelmfile repos
+brew install helmfile     
+helmfile repos
 ```
 # Preview what will be deployed (diff):
 ```

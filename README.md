@@ -10,7 +10,8 @@ bashhelmfile repos
 ```
 # Preview what will be deployed (diff):
 ```
-bashhelmfile --environment dev diff
+helmfile --environment dev diff
+
 helmfile --environment qa diff
 
 helmfile --environment dev sync

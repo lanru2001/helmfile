@@ -1,0 +1,30 @@
+environments:
+  dev:
+    values:
+      - values/common.yaml
+      - values/dev.yaml
+  qa:
+    values:
+      - values/common.yaml
+      - values/qa.yaml
+
+releases:
+  - name: apache-{{ .Environment.Name }}
+    namespace: {{ .Environment.Name }}
+    chart: bitnami/apache
+    version: "11.2.2"
+    values:
+      - replicaCount: {{ .Values.replicaCount }}
+      - image:
+          tag: {{ .Values.imageTag }}
+      - service:
+          type: {{ .Values.serviceType }}
+          port: {{ .Values.servicePort }}
+      - resources: {{ .Values.resources | toYaml | nindent 10 }}
+      - ingress:
+          enabled: {{ .Values.ingress.enabled }}
+          hostname: {{ .Values.ingress.hostname }}
+
+repositories:
+  - name: bitnami
+    url: https://charts.bitnami.com/bitnami
